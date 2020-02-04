@@ -12,10 +12,10 @@ try:
     with connection.cursor() as cursor:
         # Select all Students
         key = input("Enter a name to search:\n" )
-        sql = "SELECT * from Students WHERE Name = '" + key + "'"
+        sql = "SELECT * from Students WHERE Name LIKE %s"
         
         # execute the SQL command
-        cursor.execute(sql)
+        cursor.execute(sql, (key,))
         
         # get the results
         for result in cursor:
