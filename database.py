@@ -12,7 +12,7 @@ try:
     with connection.cursor() as cursor:
         # Select all Students
         key = input("Enter a name to search:\n" )
-        sql = "SELECT * from Students WHERE Name = " + key
+        sql = "SELECT * from Students WHERE Name = '" + key + "'"
         
         # execute the SQL command
         cursor.execute(sql)
@@ -29,3 +29,4 @@ try:
 
 finally:
     connection.close()
+
