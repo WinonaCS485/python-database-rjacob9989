@@ -12,13 +12,13 @@ try:
     with connection.cursor() as cursor:
         # Select all Students
         key = input("Enter a name to search:\n" )
-        #sql = "SELECT * from Students WHERE Name LIKE %s"
+        sql = "SELECT * from Students WHERE Name LIKE %s"
         #sql = "SELECT * from Students WHERE Name = '" + key + "'"
-        sql = "SELECT * from Students WHERE Name = '" + key + "'"
+        #sql = "SELECT * from Students WHERE Name = '" + key + "'"
         
         # execute the SQL command
-        #cursor.execute(sql, (key,))
-        cursor.execute(sql)
+        cursor.execute(sql, (key,))
+        #cursor.execute(sql)
 
         # get the results
         for result in cursor:
